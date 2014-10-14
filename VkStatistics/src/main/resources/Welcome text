@@ -1,0 +1,16 @@
+
+Hello
+			
+Make your choice
+1 - fill users database
+2 - delete database
+3 - short statistics
+4 - perform query ( select * from vk_users where city = 'Москва'
+5 - print database\n"
+6 - save photos of users to C://VK_Photos
+7 - user info by id
+8 - upload base to file
+9 - fill groups database
+q - exit
+
+input command => 
