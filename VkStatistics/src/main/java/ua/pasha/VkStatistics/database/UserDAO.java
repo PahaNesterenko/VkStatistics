@@ -1,7 +1,6 @@
 package ua.pasha.VkStatistics.database;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -32,11 +31,17 @@ public interface UserDAO {
 	 * corresponding to a passed user id.
 	 */
 	public void delete(Integer id);
+	
+	/**
+	 * This is the method to be used to delete all records from the Users table
+	 */
+	public void deleteAll();
 
 	/**
 	 * This is the method to be used to update a record into the Users table.
+	 * @throws Exception 
 	 */
-	public void update(Map<String, String> user);
+	public void update(User u) throws Exception;
 
 	/**
 	 * This is the method to be used to list down all the records from the users
