@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="ua.pasha.VkStatistics.pojo.User" table="vk_users">
+      <meta attribute="class-description">
+         This class contains the user detail. 
+      </meta>
+      <id name="id" type="int" column="id"/>   
+      
+      <property name="name" column="name" type="string"/>
+      <property name="lastName" column="last name" type="string"/>
+      <property name="bdate" column="bdate" type="string"/>
+      <property name="city" column="city" type="string"/>
+      <property name="country" column="country" type="string"/>
+      <property name="homeTown" column="home town" type="string"/>
+      <property name="photoAddress" column="photo address" type="string"/>
+      <property name="status" column="status" type="string"/>
+      <property name="relation" column="relation" type="string"/>
+      <property name="friendsNum" column="friends" type="int"/>
+      <property name="maleFriends" column="male friends" type="int"/>
+      <property name="femaleFriends" column="female friends" type="int"/>
+      <property name="followers" column="followers" type="int"/>
+      <property name="maleFollowers" column="male followers" type="int"/>
+      <property name="femaleFollowers" column="female followers" type="int"/>
+      <property name="subscriptions" column="subscriptions" type="int"/>
+      <property name="groupSubscriptions" column="group subscriptions" type="int"/>
+      <property name="maleSubscriptions" column="male subscriptions" type="int"/>
+      <property name="femaleSubscriptions" column="female subscriptions" type="int"/>
+      
+   </class>
+</hibernate-mapping>

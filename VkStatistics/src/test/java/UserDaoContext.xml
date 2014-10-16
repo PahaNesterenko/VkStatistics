@@ -15,7 +15,7 @@
 		<property name="password" value="root"></property>
 	</bean>
     
-	<bean id="UserDaoImpl" class="ua.pasha.VkStatistics.database.UserDaoImpl">
+	<bean id="UserDaoImpl" class="ua.pasha.VkStatistics.database.SpringUserDaoImpl">
 		<property name="dataSource" ref="DataSource"></property>
 		<property name="table" value="test_users"></property>
 	</bean>

@@ -9,13 +9,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import ua.pasha.VkStatistics.miscellaneous.Properties;
 import ua.pasha.VkStatistics.pojo.User;
 
-public class UserDaoImpl implements UserDAO{
+public class SpringUserDaoImpl implements UserDAO{
 	
+	@SuppressWarnings("unused")
 	private DataSource dataSource;
 	private JdbcTemplate jt;
 	private String table = Properties.usersTable;
 
-	@Override
 	public void setDataSource(DataSource ds) {
 		this.dataSource = ds;
 		this.jt = new JdbcTemplate(ds);

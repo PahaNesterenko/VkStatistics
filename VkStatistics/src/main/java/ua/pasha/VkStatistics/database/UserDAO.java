@@ -2,17 +2,9 @@ package ua.pasha.VkStatistics.database;
 
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import ua.pasha.VkStatistics.pojo.User;
 
 public interface UserDAO {
-
-	/**
-	 * This is the method to be used to initialize database resources ie.
-	 * connection.
-	 */
-	public void setDataSource(DataSource ds);
 
 	/**
 	 * This is the method to be used to list down a record from the Users table

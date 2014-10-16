@@ -1,4 +1,4 @@
-package ua.pasha.VkStatistics;
+package ua.pasha.VkStatistics.database;
 
 import static org.junit.Assert.*;
 
@@ -13,13 +13,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
 
-import ua.pasha.VkStatistics.database.UserDaoImpl;
+import ua.pasha.VkStatistics.database.SpringUserDaoImpl;
 import ua.pasha.VkStatistics.pojo.User;
 
-public class UserDaoImplTest {
+public class SpringUserDaoImplTest {
 	
 	ApplicationContext context;
-	UserDaoImpl dao; 
+	UserDAO dao; 
 	String table = "test_users";
 	User nick;
 	User sarah;
@@ -29,7 +29,7 @@ public class UserDaoImplTest {
 	public void init(){
 		
 		context = new ClassPathXmlApplicationContext("UserDaoContext.xml");
-		dao = (UserDaoImpl) context.getBean("UserDaoImpl");
+		dao = (SpringUserDaoImpl) context.getBean("UserDaoImpl");
 		dao.deleteAll();
 		
 		nick = new User();
