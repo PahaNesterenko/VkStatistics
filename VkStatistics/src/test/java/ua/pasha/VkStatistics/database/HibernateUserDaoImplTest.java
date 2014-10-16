@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.exception.ConstraintViolationException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -72,7 +73,6 @@ public class HibernateUserDaoImplTest {
 		
 	}
 	
-	@Ignore
 	@Test
 	public void recordCheckTest(){
 		dao.createUser(nick);
@@ -84,16 +84,14 @@ public class HibernateUserDaoImplTest {
 	}
 
 	//Should throw exception if create the same records
-	@Ignore
-	@Test //(expected=DuplicateKeyException.class)
+	@Test (expected=ConstraintViolationException.class)
 	public void repeatRecordTest(){
 		dao.createUser(nick);
 		dao.createUser(nick);
 	}
 	
 	//Should return nothig if delete the same records
-	@Ignore
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void repeatDeleteTest(){
 		dao.createUser(nick);
 		dao.createUser(sarah);
@@ -102,13 +100,11 @@ public class HibernateUserDaoImplTest {
 	}
 	
 	//Should throw exception if try to get record that not exists
-	@Ignore
 	@Test //(expected=EmptyResultDataAccessException.class)
 	public void requestToUnexistedRecordTest(){
 		dao.getUser(1);
 	}
 	
-	@Ignore
 	@Test
 	public void updateTest() throws Exception{
 		dao.createUser(nick);
@@ -119,13 +115,11 @@ public class HibernateUserDaoImplTest {
 		dao.update(user);
 	}
 	
-	@Ignore
-	@Test( expected = NullPointerException.class)
+	@Test( expected = IllegalArgumentException.class)
 	public void createNullRecordTest(){
 		dao.createUser(null);
 	}
 	
-	@Ignore
 	@Test
 	public void listUsersTest(){
 		List<User> expected = new ArrayList<User>();

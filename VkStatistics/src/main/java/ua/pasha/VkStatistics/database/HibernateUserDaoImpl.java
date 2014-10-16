@@ -20,7 +20,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 		}
@@ -36,7 +35,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 		}
@@ -52,7 +50,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 		}
@@ -63,9 +60,9 @@ public class HibernateUserDaoImpl implements UserDAO {
 		List<User> users;
 
 		try {
+			users = listUsers();
 			ses = HibernateConnector.getFactory().openSession();
 			ses.beginTransaction();
-			users = listUsers();
 			if (users.size() > 0) {
 				for (User userToDelete : users) {
 					ses.delete(userToDelete);
@@ -74,7 +71,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 
@@ -90,7 +86,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 		}
@@ -107,7 +102,6 @@ public class HibernateUserDaoImpl implements UserDAO {
 			ses.getTransaction().commit();
 		} finally {
 			if (ses != null && ses.isOpen()) {
-				System.out.println("closing session");
 				ses.close();
 			}
 		}
