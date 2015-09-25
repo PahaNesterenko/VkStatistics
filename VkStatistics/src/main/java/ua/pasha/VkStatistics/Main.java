@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import org.json.simple.parser.ParseException;
+import ua.pasha.VkStatistics.logic.WorkerSpring;
+import ua.pasha.VkStatistics.miscellaneous.Properties;
+import ua.pasha.VkStatistics.miscellaneous.Util;
 
 /**
  * Main class of project. Class perform user interface.

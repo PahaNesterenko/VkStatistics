@@ -1,29 +1,27 @@
 package ua.pasha.VkStatistics.logic;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.json.simple.parser.ParseException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
+import ua.pasha.VkStatistics.Statistics;
+import ua.pasha.VkStatistics.database.UserDAO;
+import ua.pasha.VkStatistics.miscellaneous.Properties;
+import ua.pasha.VkStatistics.miscellaneous.Stoper;
+import ua.pasha.VkStatistics.pojo.Group;
+import ua.pasha.VkStatistics.pojo.User;
 import ua.pasha.VkStatistics.vk.VkApiImpl;
-import src/main/resources/Properties;
 
 
 /**
@@ -40,7 +38,7 @@ public class WorkerSpring {
 	private VkApiImpl vk = null;
 	private static final int COUNT_USERS = Properties.COUNT_USERS;
 	private static final int COUNT_GROUPS = Properties.COUNT_GROUPS;
-	UserDAO userDao = null; 
+	UserDAO userDao = null;
 	String pathForPhotos = Properties.pathForPhotos;
 
 	public WorkerSpring() {
