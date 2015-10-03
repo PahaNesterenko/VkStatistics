@@ -34,25 +34,25 @@ public class Main {
 				work.fillUsersDatabase();
 				break;
 			case 2:
-				work.deleteDatabase();
+				//work.deleteDatabase();
 				break;
 			case 3:
 				work.viewShortStatiscics();
 				break;
 			case 4:
-				work.executeAndPrintQuery();
+				//work.executeAndPrintQuery();
 				break;
 			case 5:
-				work.printDatabase();
+				//work.printDatabase();
 				break;
 			case 6:
-				work.savePhotos(path);
+				work.savePhotos();
 				break;
 			case 7:
 				work.showUserById();
 				break;
 			case 8:
-				work.uploadBaseToFile();
+				//work.uploadBaseToFile();
 				break;
 			case 9:
 				work.fillGroupsDatabase();

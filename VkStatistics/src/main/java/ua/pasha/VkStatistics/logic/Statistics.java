@@ -71,11 +71,10 @@ public class Statistics {
 	int malesOfFemalesFriends;
 
 	/**
-	 * Method parse data from parameters, calculate and fill report, then print report to console 
-	 * @param data that will be parsed and calculated in format Vector<Vector<String>>
-	 */
+	 * Method parse data from parameters, calculate and fill report, then print report to console
+     */
 	public void calculateStatistics() {
-		Vector<Vector<String>> res ;
+		Vector<Vector<String>> res = new Vector<>() ;
 		parseData(res);
 		calculate();
 		printReportToConsole();
@@ -85,7 +84,7 @@ public class Statistics {
 	
 	/**
 	 * Method fills all fields of this class by analyze all strings of data which contains in parameter
-	 * @param Structured data from sql request 
+	 * @param res data from sql request
 	 */
 	private void parseData(Vector<Vector<String>> res) {
 		// 0id 1name 2lastName 3sex 4bdate 5city 6country 7homeTown
